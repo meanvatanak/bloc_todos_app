@@ -5,12 +5,12 @@ import '../../utilities/constants.dart';
 class ShowTask extends StatelessWidget {
   ShowTask({
     super.key,
-    required this.title,
+    required this.name,
     required this.description,
     required this.dueDate,
   });
 
-  final String title;
+  final String name;
   final String description;
   final String dueDate;
 
@@ -30,9 +30,9 @@ class ShowTask extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          Text('Title:'),
+          Text('Name:'),
           Text(
-            title,
+            name,
             style: const TextStyle(fontSize: 18),
           ),
           const SizedBox(height: 20),

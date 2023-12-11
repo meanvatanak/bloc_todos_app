@@ -35,23 +35,6 @@ class _RecycleBinState extends State<RecycleBin> {
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: primaryColor,
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed(
-                '/tasks-completed',
-                arguments: {
-                  'title': 'Completed Tasks',
-                  'description': 'This is the completed tasks page',
-                },
-              );
-            },
-            icon: const Icon(
-              Icons.check_circle_outline,
-              color: Colors.white,
-            ),
-          ),
-        ],
       ),
       body: Column(
         children: [

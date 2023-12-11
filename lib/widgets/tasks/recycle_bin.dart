@@ -15,7 +15,7 @@ class _DeletedTasksState extends State<DeletedTasks> {
   // Map of tasks
   final List<Map<String, dynamic>> tasksList = [
     {
-      'title': 'Buy milk',
+      'name': 'Buy milk',
       'description': 'Buy milk from the supermarket',
       'due_date': '2024-04-10',
       'category_id': '4',
@@ -23,7 +23,7 @@ class _DeletedTasksState extends State<DeletedTasks> {
       'deletedStatus': true,
     },
     {
-      'title': 'Buy eggs',
+      'name': 'Buy eggs',
       'description': 'Buy eggs from the supermarket',
       'due_date': '2024-01-10',
       'category_id': '4',
@@ -31,7 +31,7 @@ class _DeletedTasksState extends State<DeletedTasks> {
       'deletedStatus': true,
     },
     {
-      'title': 'Buy bread',
+      'name': 'Buy bread',
       'description': 'Buy bread from the supermarket',
       'due_date': '2024-10-10',
       'category_id': '4',
@@ -49,7 +49,7 @@ class _DeletedTasksState extends State<DeletedTasks> {
           final task = tasksList[index];
           return ListTile(
             title: Text(
-              task['title'],
+              task['name'],
               style: TextStyle(
                 decoration: task['deletedStatus']
                     ? TextDecoration.lineThrough
@@ -77,7 +77,7 @@ class _DeletedTasksState extends State<DeletedTasks> {
                       bottom: MediaQuery.of(context).viewInsets.bottom,
                     ),
                     child: ShowTask(
-                      title: task['title'],
+                      name: task['name'],
                       description: task['description'],
                       dueDate: task['due_date'],
                       // category_id: task['category_id'],

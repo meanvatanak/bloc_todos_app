@@ -15,7 +15,7 @@ class _TasksState extends State<Tasks> {
   // Map of tasks
   final List<Map<String, dynamic>> tasksList = [
     {
-      'title': 'Buy milk',
+      'name': 'Buy milk',
       'description': 'Buy milk from the supermarket',
       'due_date': '2024-04-10',
       'category_id': '4',
@@ -23,7 +23,7 @@ class _TasksState extends State<Tasks> {
       'deletedStatus': false,
     },
     {
-      'title': 'Buy eggs',
+      'name': 'Buy eggs',
       'description': 'Buy eggs from the supermarket',
       'due_date': '2024-01-10',
       'category_id': '4',
@@ -31,7 +31,7 @@ class _TasksState extends State<Tasks> {
       'deletedStatus': false,
     },
     {
-      'title': 'Buy bread',
+      'name': 'Buy bread',
       'description': 'Buy bread from the supermarket',
       'due_date': '2024-10-10',
       'category_id': '4',
@@ -48,7 +48,7 @@ class _TasksState extends State<Tasks> {
         itemBuilder: (context, index) {
           final task = tasksList[index];
           return ListTile(
-            title: Text(task['title']),
+            title: Text(task['name']),
             leading: Checkbox(
               value: task['status'],
               onChanged: (value) {
@@ -69,7 +69,7 @@ class _TasksState extends State<Tasks> {
                       bottom: MediaQuery.of(context).viewInsets.bottom,
                     ),
                     child: ShowTask(
-                      title: task['title'],
+                      name: task['name'],
                       description: task['description'],
                       dueDate: task['due_date'],
                       // category_id: task['category_id'],

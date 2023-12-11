@@ -11,7 +11,7 @@ class EditTask extends StatefulWidget {
 }
 
 class _EditTaskState extends State<EditTask> {
-  TextEditingController titleController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
 
   TextEditingController descriptionController = TextEditingController();
 
@@ -34,7 +34,7 @@ class _EditTaskState extends State<EditTask> {
           ),
           const SizedBox(height: 20),
           CustomTextField(
-            controller: titleController,
+            controller: nameController,
             hintText: 'Enter task title',
             labelText: 'Title',
             borderColor: primaryColor,

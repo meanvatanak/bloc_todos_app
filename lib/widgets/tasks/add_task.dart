@@ -10,7 +10,7 @@ class AddTask extends StatefulWidget {
 }
 
 class _AddTaskState extends State<AddTask> {
-  TextEditingController titleController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
   TextEditingController dueDateController = TextEditingController();
 
@@ -31,13 +31,13 @@ class _AddTaskState extends State<AddTask> {
           ),
           const SizedBox(height: 20),
           CustomTextField(
-            controller: titleController,
-            hintText: 'Enter task title',
-            labelText: 'Title',
+            controller: nameController,
+            hintText: 'Enter task Name',
+            labelText: 'Name',
             borderColor: primaryColor,
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter task title';
+                return 'Please enter task name';
               }
               return null;
             },
