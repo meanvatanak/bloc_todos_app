@@ -129,7 +129,7 @@ class _MainScreenState extends State<MainScreen> {
               title: Text('Recycle Bin'),
               onTap: () {
                 Navigator.of(context).pushNamed(
-                  '/category',
+                  '/recycle-bin',
                 );
               },
               // dense: true,

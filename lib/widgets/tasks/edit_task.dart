@@ -81,6 +81,39 @@ class _EditTaskState extends State<EditTask> {
             ),
           ),
           const SizedBox(height: 20),
+          // select category from dropdown
+          DropdownButtonFormField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              labelText: 'Category',
+              hintText: 'Select your category',
+              prefixIcon: Icon(Icons.category),
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: primaryColor,
+                  width: 2.0,
+                ),
+              ),
+            ),
+            value: 'Personal',
+            items: [
+              DropdownMenuItem(value: 'Personal', child: Text('Personal')),
+              DropdownMenuItem(value: 'Work', child: Text('Work')),
+              DropdownMenuItem(value: 'Meeting', child: Text('Meeting')),
+            ],
+            onChanged: (value) {
+              setState(() {});
+            },
+            validator: (value) {
+              if (value == null) {
+                return 'Please select an item';
+              }
+              return null;
+            },
+          ),
+          const SizedBox(height: 20),
           // cancel and add buttons
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

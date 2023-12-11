@@ -7,6 +7,7 @@ import 'package:bloc_todos_app/screens/profile/profile.dart';
 import 'package:bloc_todos_app/screens/profile/qr_code.dart';
 import 'package:bloc_todos_app/screens/splash/splash.dart';
 import 'package:bloc_todos_app/screens/tasks/my_tasks/my_tasks.dart';
+import 'package:bloc_todos_app/screens/tasks/recycle_bin/recycle_bin.dart';
 import 'package:bloc_todos_app/screens/tasks/tasks_category/tasks_category.dart';
 import 'package:flutter/material.dart';
 
@@ -73,6 +74,10 @@ Route<dynamic> appRoute(RouteSettings settings) {
         builder: (context) => TasksCompletedList(
           routeArguments: routeArguments,
         ),
+      );
+    case '/recycle-bin':
+      return MaterialPageRoute(
+        builder: (context) => RecycleBin(),
       );
     default:
       return MaterialPageRoute(

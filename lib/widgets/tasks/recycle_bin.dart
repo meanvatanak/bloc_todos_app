@@ -2,16 +2,16 @@ import 'package:bloc_todos_app/widgets/tasks/edit_task.dart';
 import 'package:bloc_todos_app/widgets/tasks/show_task.dart';
 import 'package:flutter/material.dart';
 
-class Tasks extends StatefulWidget {
-  const Tasks({
+class DeletedTasks extends StatefulWidget {
+  const DeletedTasks({
     super.key,
   });
 
   @override
-  State<Tasks> createState() => _TasksState();
+  State<DeletedTasks> createState() => _DeletedTasksState();
 }
 
-class _TasksState extends State<Tasks> {
+class _DeletedTasksState extends State<DeletedTasks> {
   // Map of tasks
   final List<Map<String, dynamic>> tasksList = [
     {
@@ -20,7 +20,7 @@ class _TasksState extends State<Tasks> {
       'due_date': '2024-04-10',
       'category_id': '4',
       'status': false,
-      'deletedStatus': false,
+      'deletedStatus': true,
     },
     {
       'title': 'Buy eggs',
@@ -28,7 +28,7 @@ class _TasksState extends State<Tasks> {
       'due_date': '2024-01-10',
       'category_id': '4',
       'status': false,
-      'deletedStatus': false,
+      'deletedStatus': true,
     },
     {
       'title': 'Buy bread',
@@ -36,7 +36,7 @@ class _TasksState extends State<Tasks> {
       'due_date': '2024-10-10',
       'category_id': '4',
       'status': false,
-      'deletedStatus': false,
+      'deletedStatus': true,
     },
   ];
 
@@ -48,7 +48,15 @@ class _TasksState extends State<Tasks> {
         itemBuilder: (context, index) {
           final task = tasksList[index];
           return ListTile(
-            title: Text(task['title']),
+            title: Text(
+              task['title'],
+              style: TextStyle(
+                decoration: task['deletedStatus']
+                    ? TextDecoration.lineThrough
+                    : TextDecoration.none,
+                color: task['deletedStatus'] ? Colors.red : Colors.black,
+              ),
+            ),
             leading: Checkbox(
               value: task['status'],
               onChanged: (value) {

@@ -48,6 +48,12 @@ class ShowTask extends StatelessWidget {
             style: const TextStyle(fontSize: 18),
           ),
           const SizedBox(height: 20),
+          Text('Category:'),
+          Text(
+            'Personal Work',
+            style: const TextStyle(fontSize: 18),
+          ),
+          const SizedBox(height: 20),
           // cancel and add buttons
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
