@@ -17,9 +17,7 @@ void showConfirmLogoutDialog(BuildContext context) async {
             child: const Text('Cancel'),
           ),
           TextButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/login');
-            },
+            onPressed: () {},
             child: const Text('OK'),
           ),
         ],

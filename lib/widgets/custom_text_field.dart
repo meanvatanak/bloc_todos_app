@@ -9,9 +9,9 @@ class CustomTextField extends StatefulWidget {
     this.prefixIcon,
     this.isPassword = false,
     this.isReadOnly = false,
-    this.maxLines,
     this.validator,
-    this.borderColor,
+    this.height,
+    this.initialValue,
   }) : super(key: key);
 
   final TextEditingController? controller;
@@ -20,8 +20,8 @@ class CustomTextField extends StatefulWidget {
   final Icon? prefixIcon;
   final bool isPassword;
   final bool isReadOnly;
-  final int? maxLines;
-  final Color? borderColor;
+  final double? height;
+  final String? initialValue;
 
   final String? Function(String?)? validator;
 
@@ -41,24 +41,24 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      initialValue: widget.initialValue,
       controller: widget.controller,
-      // obscureText: widget.isPassword ? true : false,
       obscureText: _hidePassword,
       readOnly: widget.isReadOnly,
-      maxLines: widget.maxLines ?? 1,
       decoration: InputDecoration(
         filled: widget.isReadOnly ? true : false,
         fillColor: Colors.grey[400],
+        contentPadding:
+            EdgeInsets.symmetric(vertical: widget.height ?? 18, horizontal: 10),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
         ),
         labelText: widget.labelText,
         hintText: widget.labelText,
-        // prefixIcon: Icon(Icons.password),
         prefixIcon: widget.prefixIcon,
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: widget.borderColor ?? Colors.green!,
+            color: Colors.green,
             width: 2.0,
           ),
         ),
